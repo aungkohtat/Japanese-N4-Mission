@@ -64,13 +64,6 @@ This repository serves as my public Japanese learning journal and progress track
 1. 
 2. 
 
-## 🤖 AI Mentor Assistance  
-I use [DeepSeek Chat](https://chat.deepseek.com) as my 24/7 Japanese learning mentor.  
-
-**Sample Uses:**  
-- Grammar explanations (e.g. "は vs が")  
-- Code reviews for my Python projects  
-- JLPT study plan suggestions
 
 ### 🤖 Tech Progress
 - [ ] Project Updates:

@@ -16,6 +16,7 @@ __pycache__/
 *.py[cod]
 *.so
 .Python
+.env  
 env/
 venv/
 *.egg-info/
@@ -67,3 +68,4 @@ yarn-error.log*
 
 # Keep all PDFs in resources
 !RESOURCES/**/*.pdf
+.env
