@@ -2,7 +2,7 @@
 
 **Goal:** Pass JLPT N4 by December 2025  
 **Current Stage:** N5 (Genki I)  
-**Last Updated:** 2024-07-17
+**Last Updated:** 2024-07-14
 
 ## 🌟 About This Project
 
@@ -55,10 +55,10 @@ This repository serves as my public Japanese learning journal and progress track
 ```markdown
 ## YYYY-MM-DD | Day X/180
 ### ✅ Completed
-- [ ] Genki Chapter: ___
-- [ ] Kanji Learned: ___/300
-- [ ] Vocab Reviewed: ___/1500
-- [ ] Listening: ___ minutes
+- [ ] Genki Chapter: 1
+- [ ] Kanji Learned: 10/300
+- [ ] Vocab Reviewed: 10/1500
+- [ ] Listening: 30 minutes
 
 ### 🎯 Goals for Tomorrow
 1. 
