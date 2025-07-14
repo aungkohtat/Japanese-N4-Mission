@@ -1,0 +1,69 @@
+# .gitignore for Japanese-N4-Mission Repository
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Anki backups
+*.anki2
+*.anki21
+*.anki22
+*.apkg
+*.colpkg
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large media files
+*.mp3
+*.wav
+*.mp4
+*.mov
+
+# Exceptions (keep these)
+!RESOURCES/audio/
+!PROJECTS/media/
+
+# Keep all markdown files except temp drafts
+*.md
+!README.md
+!DAILY_LOGS/*.md
+!RESOURCES/*.md
+
+# Keep all PDFs in resources
+!RESOURCES/**/*.pdf
