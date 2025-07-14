@@ -68,3 +68,4 @@ This repository serves as my public Japanese learning journal and progress track
 - [ ] Project Updates:
 - [ ] Code Commits:
 
+![Progress](https://progress-bar.dev/$((DAY_NUM-1))/?scale=180&title=Days%20Completed)
