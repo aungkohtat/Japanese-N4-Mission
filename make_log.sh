@@ -1,39 +1,18 @@
 #!/bin/bash
 
-# Config
-TOTAL_DAYS=180
-REPO_DIR="/Users/aungkohtet/Japanese-N4-Mission"
-LOG_DIR="$REPO_DIR/DAILY_LOGS"
+# Calculate day number (0-based for progress bar)
+LOG_DIR="$HOME/Japanese-N4-Mission/DAILY_LOGS"
+DAY_NUM=$(ls -1 "$LOG_DIR" | grep '.md$' | wc -l) # Count existing logs
 
-# Calculate day number
-LOG_COUNT=$(ls "$LOG_DIR"/*.md | wc -l | tr -d ' ')
-DAY_NUM=$((LOG_COUNT + 1))
+# Create new log with PROPER progress bar URL
+TODAY=$(date +%Y-%m-%d)
+TEMPLATE="$LOG_DIR/template.md"
+NEW_LOG="$LOG_DIR/$TODAY.md"
 
-# Create file with auto-day-count
-LOG_FILE="$LOG_DIR/$(date +%Y-%m-%d).md"
-cat <<EOF >"$LOG_FILE"
-## $(date +%Y-%m-%d) | Day $DAY_NUM/$TOTAL_DAYS
+# Replace placeholders and fix progress bar URL
+sed -e "s/YYYY-MM-DD/$TODAY/g" \
+  -e "s/Day X\/180/Day $((DAY_NUM + 1))\/180/g" \
+  -e "s/\[\[DAY_NUM\]\]/$DAY_NUM/g" \
+  "$TEMPLATE" >"$NEW_LOG"
 
-### ✅ Completed
-- [ ] Genki Chapter: ___
-- [ ] Kanji Learned: ___/300
-- [ ] Vocabulary Reviewed: ___/1500
-- [ ] Listening Practice: ___ mins
-
-### 🎯 Tomorrow's Goals
-1. 
-2. 
-
-### 🤖 Tech Progress
-- [ ] Project Updates:
-- [ ] Code Commits:
-EOF
-
-# Open in nvim
-nvim "$LOG_FILE"
-
-# Git sync
-cd "$REPO_DIR"
-git add "$LOG_FILE"
-git commit -m "Auto: Day $DAY_NUM log"
-git push origin main
+echo "Created log for $TODAY (Day $((DAY_NUM + 1)))"
