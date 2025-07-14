@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese N4 Mission - 日本語学習</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .japanese-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .features {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .progress-section {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .progress-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .progress-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .resources {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateX(5px);
+        }
+
+        .resource-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .japanese-title {
+                font-size: 1.5rem;
+            }
+            
+            .features-grid,
+            .progress-grid,
+            .resource-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🗾 Japanese N4 Mission</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#progress">Progress</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Japanese N4 Mission</h1>
+                <div class="japanese-title">日本語能力試験 N4 レベル</div>
+                <p>Your comprehensive guide to mastering Japanese N4 level proficiency</p>
+                <a href="https://github.com/aungkohtat/Japanese-N4-Mission" class="cta-button" target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Learning Features</h2>
+                <p class="section-subtitle">Everything you need to master Japanese N4</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Vocabulary Building</h3>
+                        <p>Comprehensive N4 vocabulary lists with meanings, readings, and example sentences</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">✍️</div>
+                        <h3>Grammar Patterns</h3>
+                        <p>Essential N4 grammar structures with clear explanations and practical examples</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎧</div>
+                        <h3>Listening Practice</h3>
+                        <p>Audio resources and listening exercises to improve comprehension skills</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Practice Tests</h3>
+                        <p>Mock exams and quizzes to test your knowledge and track progress</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔤</div>
+                        <h3>Kanji Study</h3>
+                        <p>N4 level kanji with stroke order, readings, and memory techniques</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Conversation</h3>
+                        <p>Practical dialogues and phrases for everyday communication</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress" class="progress-section">
+            <div class="container">
+                <h2 class="section-title">Learning Progress</h2>
+                <p class="section-subtitle">Track your journey to N4 mastery</p>
+                
+                <div class="progress-grid">
+                    <div class="progress-card">
+                        <div class="progress-number">800+</div>
+                        <p>Vocabulary Words</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-number">50+</div>
+                        <p>Grammar Points</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-number">300+</div>
+                        <p>Kanji Characters</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-number">100+</div>
+                        <p>Practice Exercises</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources">
+            <div class="container">
+                <h2 class="section-title">Study Resources</h2>
+                <p class="section-subtitle">Organized materials for effective learning</p>
+                
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <h4>📖 Textbook Materials</h4>
+                        <p>Structured lessons following popular N4 textbooks and curricula</p>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <h4>🎯 Flashcards</h4>
+                        <p>Digital flashcards for vocabulary and kanji memorization</p>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <h4>📊 Progress Tracking</h4>
+                        <p>Tools and templates to monitor your learning progress</p>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <h4>🎮 Interactive Exercises</h4>
+                        <p>Engaging activities and games to make learning fun</p>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <h4>📱 Mobile-Friendly</h4>
+                        <p>Study materials optimized for learning on any device</p>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <h4>🌐 Community Support</h4>
+                        <p>Connect with other learners and share your progress</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Japanese N4 Mission. Created with ❤️ for Japanese learners.</p>
+            <p>頑張って！(Ganbatte! - Good luck!)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
