@@ -19,7 +19,7 @@ chars = {
 
 def run_quiz():
     score = 0
-    total = 20  # Number of questions
+    total = 10  # Number of questions
     
     print("✨ Hiragana/Katakana Quiz ✨\nAnswer with romaji (e.g. 'ka'). Type 'quit' to exit.\n")
     
